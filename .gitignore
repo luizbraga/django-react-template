@@ -11,11 +11,21 @@
 
 virtualenv/
 htmlcov/
-src/static_dist/
-src/static_root/
+webserver/static_dist/
+webserver/static_root/
 
 # Python compiled byte code
-*.pyc
+*.py[cod]
+__pycache__
+
+
+# virtual environments
+.env
+
+# User-uploaded media
+venv/
+webserver/project_name/staticfiles
+venv
 
 # SQLite3 database
 *.sqlite
