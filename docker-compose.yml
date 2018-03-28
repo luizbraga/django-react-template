@@ -4,26 +4,26 @@ services:
 
     nginx:
         extends:
-            file: docker-common.yml
+            file: ./common.yml
             service: nginx
         ports:
             - 8000:8000
         volumes:
-            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - ./compose/nginx/default.conf:/etc/nginx/conf.d/default.conf
         volumes_from:
             - webserver
 
     database:
         extends:
-            file: docker-common.yml
+            file: ./common.yml
             service: database
         ports:
             - 5433:5432
 
     webserver:
         extends:
-            file: docker-common.yml
-            service: django
+            file: ./common.yml
+            service: webserver
         links:
             - database
         entrypoint:
@@ -33,7 +33,7 @@ services:
 
     frontend:
         extends:
-            file: docker-common.yml
+            file: ./common.yml
             service: web
         links:
             - webserver
