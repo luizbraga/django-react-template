@@ -1,0 +1,12 @@
+
+# Django
+django=2.0.3
+django-rest-framework=0.1.0
+dj_database_url==0.4.2
+
+# Raven
+raven==5.22.0
+
+# Misc
+python-decouple==3.1
+requests==2.18.4
