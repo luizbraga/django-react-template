@@ -17,7 +17,7 @@ npm manifest:
   {
     "name": "project_name",
     "version": "1.0.0",
-    "description": "Project Name",
+    "description": "Django and React",
     "repository": "git@github.com:luizbraga/django-react-boilerplate.git",
     "scripts": {
       "dev": "webpack --progress --display-error-details --config webpack/common.config.js --watch",
@@ -74,7 +74,7 @@ Lockfile:
   No lockfile
 
 Trace: 
-  SyntaxError: /app/package.json: Unexpected token } in JSON at position 1652
+  SyntaxError: /app/package.json: Unexpected token } in JSON at position 1656
       at JSON.parse (<anonymous>)
       at /usr/share/yarn/lib/cli.js:1036:59
       at Generator.next (<anonymous>)

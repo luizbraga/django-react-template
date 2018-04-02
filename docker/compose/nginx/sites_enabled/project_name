@@ -1,0 +1,19 @@
+server {
+    listen 80;
+
+    location / {
+        proxy_pass http://backend:8000/;
+    }
+
+    location /static/ {
+        alias   /www/static/;
+    }
+
+    client_body_in_file_only clean;
+    client_body_buffer_size 32K;
+
+    client_max_body_size 30M;
+
+    sendfile on;
+    send_timeout 30s;
+}

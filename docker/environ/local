@@ -1,0 +1,13 @@
+# Database settings
+POSTGRES_USER=project_name
+POSTGRES_PASSWORD=project_name
+POSTGRES_DB=project_name
+POSTGRES_HOST=database
+DATABASE_URL=postgres://project_name:project_name@database:5432/project_name
+
+# General settings
+DJANGO_DEBUG=True
+DJANGO_ADMIN_URL=admin/
+DJANGO_SETTINGS_MODULE=project_name.settings.local
+DJANGO_SECRET_KEY=CHANGEME
+DJANGO_ALLOWED_HOSTS=*

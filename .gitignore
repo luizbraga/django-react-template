@@ -11,8 +11,9 @@
 
 virtualenv/
 htmlcov/
-webserver/static_dist/
-webserver/static_root/
+postgres/data
+backend/static_dist/
+backend/static_root/
 
 # Python compiled byte code
 *.py[cod]
@@ -24,7 +25,7 @@ __pycache__
 
 # User-uploaded media
 venv/
-webserver/project_name/staticfiles
+backend/staticfiles
 venv
 
 # SQLite3 database
