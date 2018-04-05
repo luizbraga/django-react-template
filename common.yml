@@ -24,8 +24,9 @@ services:
 
     frontend:
       restart: always
+      user: "node"
       build:
         context: .
         dockerfile: ./docker/compose/web/Dockerfile
       volumes:
-        - .:/app
+        - ./frontend:/app/frontend

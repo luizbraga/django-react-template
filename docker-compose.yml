@@ -21,8 +21,6 @@ services:
           - /django-entrypoint.sh
         env_file:
           - ./docker/environ/local
-        expose:
-          - 8000
         ports:
           - 8000:8000
 
@@ -32,5 +30,7 @@ services:
           service: frontend
         links:
           - backend
-        entrypoint:
-          - /web-entrypoint.sh
+        environment:
+          - NODE_ENV=development
+        ports:
+          - 3000:3000

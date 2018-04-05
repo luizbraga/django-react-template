@@ -1,17 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import promise from 'redux-promise'
 
-import App from './components/app';
+import reducers from './reducers';
+import App from './components/app'
 
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
-const initialState = {};
-const target = document.getElementById('root');
-
-const node (
+// Switch = most specific 1st!
+ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route path="/" component={App} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   </Provider>
-)
-
-ReactDOM.render(node, target);
+  , document.querySelector('.container'));

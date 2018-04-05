@@ -11,7 +11,7 @@
 
 virtualenv/
 htmlcov/
-postgres/data
+postgres/
 backend/static_dist/
 backend/static_root/
 
