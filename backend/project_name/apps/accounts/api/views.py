@@ -1,20 +1,19 @@
 from accounts.api.serializers import UserSerializer
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from rest_framework import viewsets
 from rest_framework.response import Response
 
+User = get_user_model()
 
-class UserViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed
-    """
+
+class UserList(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
-    search_fields = ('first_name', 'last_name', 'email')
-    filter_fields = ('id', 'first_name', 'last_name', 'email')
+    search_fields = ('username', 'email', 'is_active')
+    filter_fields = ('email', 'is_active')
 
 
-class UserViewVSet(viewsets.ModelViewSet):
+class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
