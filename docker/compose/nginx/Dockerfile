@@ -1,3 +1,2 @@
 FROM nginx:latest
-
-ADD . /etc/nginx/
+ADD nginx.conf /etc/nginx/nginx.conf

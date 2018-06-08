@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+
+    nginx:
+        container_name: nginx
+        build: ./docker/compose/nginx/Dockerfile
+        depends_on:
+          - webserver
+        ports:
+          - "0.0.0.0:80:80"
+
+    webserver:
+        container_name: webserver
+        build:
+          context: .
+          dockerfile: ./docker/compose/django/prod/Dockerfile
+        user: django
+        command: /start.sh
+        volumes:
+          - .:/app
+        env_file:
+          - ./docker/environ/prod
+        ports:
+          - 8000:8000

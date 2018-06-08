@@ -4,7 +4,7 @@
   "description": "This is a simple Django React application based on my experience as a developer. Suggestions and feedbacks are welcome!",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server ./static/js/src/index.js --mode development --open",
+    "start": "webpack-dev-server ./static/js/src/index.js --mode development --host 0.0.0.0 --inline=true --hot",
     "dev": "webpack --mode development ./static/js/src/index.js --output ./static/builds-dev/bundle.js",
     "build": "webpack  --mode production ./static/js/src/index.js --output ./static/builds/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -21,4 +21,4 @@ ReactDOM.render(
       </div>
     </BrowserRouter>
   </Provider>
-  , document.querySelector('#react-root'));
+  , document.getElementById('react-root'));

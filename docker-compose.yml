@@ -1,5 +1,8 @@
 version: '2'
 
+volumes:
+  db_dev: {}
+
 services:
 
     database:
@@ -9,36 +12,36 @@ services:
         env_file:
           - ./docker/environ/local
         ports:
-          - 5433:5432
-
-    pgadmin:
-        image: thajeztah/pgadmin4
-        container_name: pgadmin
-        links:
-          - database
-        ports:
-          - 5050:5050
+          - 5432:5432
+        volumes:
+          - db_dev:/var/lib/postgresql/data
 
     webserver:
-        extends:
-          file: ./docker/common.yml
-          service: webserver
+        container_name: webserver
+        image: webserver_dev
+        restart: always
+        build:
+          context: .
+          dockerfile: ./docker/compose/django/dev/Dockerfile
+        volumes:
+          - .:/app
         links:
           - database
-        entrypoint:
-          - /django-entrypoint.sh
+          - frontend
         env_file:
           - ./docker/environ/local
         ports:
           - 8000:8000
 
     frontend:
-        extends:
-          file: ./docker/common.yml
-          service: frontend
-        links:
-          - webserver
-        environment:
-          - NODE_ENV=development
+        image: frontend_dev
+        container_name: frontend
+        restart: always
+        command: /start.sh
+        build:
+          context: .
+          dockerfile: ./docker/compose/node/dev/Dockerfile
+        volumes:
+          - .:/app/frontend
         ports:
           - 3000:3000

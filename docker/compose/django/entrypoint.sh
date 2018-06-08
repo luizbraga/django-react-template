@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-until python manage.py migrate --settings=project_name.settings.docker
+until python manage.py migrate --settings=project_name.settings.local
 do
     echo "Waiting for postgres..."
     sleep 2

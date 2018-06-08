@@ -1,12 +1,10 @@
-import os
 import socket
 from .base import *  # noqa
 
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': 'builds-dev/',
-        'STATS_FILE': os.path.join(
-            BASE_DIR, 'webpack', 'webpack-stats.dev.json')
+        'STATS_FILE': BASE_DIR.joinpath('webpack.config.json')
     }
 }
 

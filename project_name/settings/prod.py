@@ -1,11 +1,10 @@
-import os
 from .base import *
 
 
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': 'builds/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'webpack', 'webpack-stats.production.json')
+        'STATS_FILE': BASE_DIR.joinpath('webpack.config.json')
     }
 }
 

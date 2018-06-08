@@ -29,6 +29,7 @@ DJANGO_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
@@ -136,6 +137,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
+
 DATE_FORMAT = 'd/m/Y'
 
 DATETIME_FORMAT = 'd-m-Y H:i:S'
@@ -153,7 +156,7 @@ THOUSAND_SEPARATOR = '.'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    BASE_DIR.joinpath('static'),
+    BASE_DIR.parent.joinpath('static'),
 )
 
 STATIC_ROOT = config(

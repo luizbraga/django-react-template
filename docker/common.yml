@@ -7,26 +7,8 @@ services:
       image: nginx
 
     database:
+      container_name: database
       restart: always
       image: postgres:9.5
       expose:
         - 5432
-      volumes:
-        - project_name_db:/var/lib/postgresql
-
-    webserver:
-      restart: always
-      build:
-        context: .
-        dockerfile: ./docker/compose/django/Dockerfile
-      volumes:
-        - .:/app
-
-    frontend:
-      restart: always
-      user: "node"
-      build:
-        context: .
-        dockerfile: ./docker/compose/web/Dockerfile
-      volumes:
-        - ./frontend:/app/frontend
