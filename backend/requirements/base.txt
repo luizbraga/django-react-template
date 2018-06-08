@@ -2,13 +2,18 @@
 # Django
 django==2.0.3
 djangorestframework==3.8.2
+django-webpack-loader==0.6.0
 django_filter==1.1.0
 dj_database_url==0.4.2
 
 psycopg2-binary==2.7.4
 
-# Raven
-raven==5.22.0
+# Celery
+celery==4.1.0
+django-celery-beat==1.1.1
+django-celery-results==1.0.1
+kombu==4.1.0
+flower==0.9.2
 
 # Misc
 python-decouple==3.1
