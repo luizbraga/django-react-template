@@ -2,7 +2,7 @@ server {
     listen 80;
 
     location / {
-        proxy_pass http://backend:8000/;
+        proxy_pass http://webserver:8000/;
     }
 
     location /static/ {

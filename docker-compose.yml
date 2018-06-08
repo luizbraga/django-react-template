@@ -4,7 +4,7 @@ services:
 
     database:
         extends:
-          file: ./common.yml
+          file: ./docker/common.yml
           service: database
         env_file:
           - ./docker/environ/local
@@ -19,10 +19,10 @@ services:
         ports:
           - 5050:5050
 
-    backend:
+    webserver:
         extends:
-          file: ./common.yml
-          service: backend
+          file: ./docker/common.yml
+          service: webserver
         links:
           - database
         entrypoint:
@@ -34,10 +34,10 @@ services:
 
     frontend:
         extends:
-          file: ./common.yml
+          file: ./docker/common.yml
           service: frontend
         links:
-          - backend
+          - webserver
         environment:
           - NODE_ENV=development
         ports:

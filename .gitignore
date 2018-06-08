@@ -12,8 +12,8 @@
 virtualenv/
 htmlcov/
 postgres/
-backend/static_dist/
-backend/static_root/
+static_dist/
+static_root/
 
 # Python compiled byte code
 *.py[cod]
@@ -25,7 +25,7 @@ __pycache__
 
 # User-uploaded media
 venv/
-backend/staticfiles
+staticfiles
 venv
 
 # SQLite3 database
@@ -35,6 +35,8 @@ venv
 node_modules/
 yarn.lock
 npm-debug.log
+static/builds-dev
+static/builds
 
 # Coverage
 coverage/

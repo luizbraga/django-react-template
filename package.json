@@ -1,0 +1,45 @@
+{
+  "name": "django-react-template",
+  "version": "1.0.0",
+  "description": "This is a simple Django React application based on my experience as a developer. Suggestions and feedbacks are welcome!",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server ./static/js/src/index.js --mode development --open",
+    "dev": "webpack --mode development ./static/js/src/index.js --output ./static/builds-dev/bundle.js",
+    "build": "webpack  --mode production ./static/js/src/index.js --output ./static/builds/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luizbraga/django-react-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luizbraga/django-react-template/issues"
+  },
+  "homepage": "https://github.com/luizbraga/django-react-template#readme",
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "lodash": "^4.17.10",
+    "mini-css-extract-plugin": "^0.4.0",
+    "react": "^16.4.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.0",
+    "react-fontawesome": "^1.6.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-form": "^7.3.0",
+    "redux-promise": "^0.6.0",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3",
+    "webpack-dev-server": "^3.1.4"
+  }
+}

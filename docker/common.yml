@@ -14,7 +14,7 @@ services:
       volumes:
         - project_name_db:/var/lib/postgresql
 
-    backend:
+    webserver:
       restart: always
       build:
         context: .
