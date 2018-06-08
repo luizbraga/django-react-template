@@ -34,9 +34,12 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
+    'allauth',
+    'allauth.account',
     'rest_framework',
     'rest_framework.authtoken',
-    'django_filters'
+    'django_filters',
+    'webpack_loader'
 ]
 
 LOCAL_APPS = [
@@ -46,8 +49,11 @@ LOCAL_APPS = [
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
-MIDDLEWARE = [
+DJANGO_SECURITY_MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+]
+
+DJANGO_MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+MIDDLEWARE = DJANGO_SECURITY_MIDDLEWARE + DJANGO_MIDDLEWARE
 
 ROOT_URLCONF = 'project_name.urls'
 
@@ -156,3 +164,15 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+
+
+# Email Configuration
+# https://docs.djangoproject.com/en/1.10/topics/email/
+
+EMAIL_PORT = config('EMAIL_PORT')
+
+EMAIL_HOST = config('EMAIL_HOST')
+
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
