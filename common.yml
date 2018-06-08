@@ -12,7 +12,7 @@ services:
       expose:
         - 5432
       volumes:
-        - ./postgres/data:/var/lib/postgresql
+        - project_name_db:/var/lib/postgresql
 
     backend:
       restart: always
