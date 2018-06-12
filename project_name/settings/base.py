@@ -156,11 +156,11 @@ THOUSAND_SEPARATOR = '.'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    BASE_DIR.parent.joinpath('static'),
+    str(BASE_DIR.parent.joinpath('static')),
 )
 
 STATIC_ROOT = config(
-    'STATIC_ROOT', default=BASE_DIR.parent.joinpath('staticfiles')
+    'STATIC_ROOT', default=str(BASE_DIR.parent.joinpath('staticfiles'))
 )
 
 STATICFILES_FINDERS = (

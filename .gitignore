@@ -37,6 +37,7 @@ yarn.lock
 npm-debug.log
 static/builds-dev
 static/builds
+webpack-stats.json
 
 # Coverage
 coverage/

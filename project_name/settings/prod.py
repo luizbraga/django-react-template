@@ -4,7 +4,7 @@ from .base import *
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': 'builds/',
-        'STATS_FILE': BASE_DIR.joinpath('webpack.config.json')
+        'STATS_FILE': str(BASE_DIR.parent.joinpath('webpack-stats.json'))
     }
 }
 

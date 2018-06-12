@@ -4,7 +4,7 @@ from .base import *  # noqa
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': 'builds-dev/',
-        'STATS_FILE': BASE_DIR.joinpath('webpack.config.json')
+        'STATS_FILE': str(BASE_DIR.parent.joinpath('webpack-stats.json'))
     }
 }
 

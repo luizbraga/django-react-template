@@ -42,6 +42,6 @@ services:
           context: .
           dockerfile: ./docker/compose/node/dev/Dockerfile
         volumes:
-          - .:/app/frontend
+          - .:/app
         ports:
           - 3000:3000
