@@ -4,9 +4,9 @@
   "description": "This is a simple Django React application based on my experience as a developer. Suggestions and feedbacks are welcome!",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development ./static/js/src/index.js --host 0.0.0.0 --port 3000 --inline=true --hot",
-    "dev": "webpack --mode development ./static/js/src/index.js --output ./static/builds-dev/bundle.js",
-    "build": "webpack  --mode production ./static/js/src/index.js --output ./static/builds/bundle.js",
+    "start": "webpack-dev-server --config ./webpack/dev.config.js --mode development ./static/js/src/index.js --host 0.0.0.0 --port 3000 --inline=true --hot",
+    "dev": "webpack --config ./webpack/dev.config.js --mode development ./static/js/src/index.js --output ./static/builds-dev/bundle.js",
+    "build": "webpack --config ./webpack/prod.config.js --mode production ./static/js/src/index.js --output ./static/builds/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
